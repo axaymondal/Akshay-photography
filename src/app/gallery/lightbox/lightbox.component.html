@@ -1,0 +1,18 @@
+<div class="lightbox-overlay" (click)="close()">
+  <div class="lightbox-bg" [ngStyle]="{ 'background-image': 'url(' + imageSrc + ')' }"></div>
+  <div class="lightbox-content" (click)="$event.stopPropagation()">
+    <div class="controls">
+      <button class="close-btn" (click)="close()">&times;</button>
+    </div>
+    <button class="nav-btn prev-btn" (click)="previousImage($event)">&#10094;</button>
+    <button class="nav-btn next-btn" (click)="nextImage($event)">&#10095;</button>
+    <div class="image-info">
+      <h2 class="image-title">{{ imageTitle }}</h2>
+      <p class="image-description">{{ imageDescription }}</p>
+    </div>
+    <img [src]="imageSrc" [alt]="imageAlt" preventRightClick>
+    <div class="download-btn-wrapper">
+      <button class="modern-download-btn" (click)="downloadImage($event)">DOWNLOAD</button>
+    </div>
+  </div>
+</div> 

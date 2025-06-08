@@ -1,11 +1,19 @@
-<div class="container">
-  <header>
-    <h1>Welcome to Akshay Photography</h1>
-  </header>
-  <main>
-    <section class="hero">
-      <h2>Capturing Life's Beautiful Moments</h2>
-      <p>Professional photography services for all your special occasions</p>
-    </section>
-  </main>
+<div class="home-container">
+  <div class="hero-section">
+    <div class="image-container" *ngIf="currentImage">
+      <img [src]="currentImage.secure_url" [alt]="currentImage.public_id" class="hero-image">
+    </div>
+    <div class="description-container">
+      <h1 class="title">Akshay Photography</h1>
+      <p class="description">{{ descriptions[currentSlideIndex] }}</p>
+      <button class="gallery-btn" (click)="goToGallery()">View Gallery</button>
+    </div>
+  </div>
+  <div class="hero-gallery">
+    <img *ngFor="let image of images.slice(0, 3)" 
+         [src]="image.secure_url" 
+         [alt]="image.public_id" 
+         class="hero-img" 
+         (click)="goToGallery()">
+  </div>
 </div> 

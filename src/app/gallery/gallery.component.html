@@ -1,10 +1,33 @@
 <div class="container">
   <header>
     <h1>Photo Gallery</h1>
+    <div class="category-filters">
+      <button 
+        *ngFor="let category of categories" 
+        [class.active]="selectedCategory === category"
+        (click)="selectCategory(category)"
+        class="category-btn">
+        {{ category | titlecase }}
+      </button>
+    </div>
   </header>
   <main>
     <div class="gallery-grid">
-      <!-- Gallery items will be added here -->
+      <div *ngFor="let image of filteredImages" class="gallery-item" (click)="openLightbox(image)">
+        <img [src]="image.src" [alt]="image.alt" loading="lazy">
+      </div>
     </div>
   </main>
-</div> 
+</div>
+
+<app-lightbox
+  *ngIf="showLightbox && selectedImage"
+  [imageSrc]="selectedImage.src"
+  [imageAlt]="selectedImage.alt"
+  [imageTitle]="selectedImage.title"
+  [imageDescription]="selectedImage.description"
+  [currentIndex]="currentImageIndex"
+  [totalImages]="filteredImages.length"
+  (closeLightbox)="closeLightbox()"
+  (navigate)="navigateToImage($event)">
+</app-lightbox> 
