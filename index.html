@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-critters-container>
+
+<head>
+  <meta charset="utf-8">
+  <title>Akshay Photography</title>
+
+  <base href="/Akshay-photography/">
+
+  <meta name="color-scheme" content="light dark">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png">
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <script>
+    (function(l) {
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) { 
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location))
+  </script>
+<style>@import"https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap";*{margin:0;padding:0;box-sizing:border-box}body{font-family:Roboto,sans-serif;line-height:1.6;color:#333;background-color:#f5f5f5}</style><link rel="stylesheet" href="styles.25577a812c867ab3.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.25577a812c867ab3.css"></noscript></head>
+
+<body>
+  <app-root></app-root>
+<script src="runtime.9bebae3e9f3ec59e.js" type="module"></script><script src="polyfills.412cda3d663ad529.js" type="module"></script><script src="main.4069ef08f3271376.js" type="module"></script></body>
+
+</html>
